@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>index</title>
+		<meta name="author" content="fahim.chowdhury" />
+		<!-- Date: 2013-05-13 -->
+		<link type="text/css" rel="stylesheet" href="resource/css/style.css" />
+		<script type="text/javascript" src="lib/com/fahimchowdhury/toolkit/toolkitMax-v1014-compressed.js"></script>
+		<script type="text/javascript" src="src/controller/Controller.js"></script>
+		<script type="text/javascript" src="src/model/Model.js"></script>
+		<script type="text/javascript" src="src/RentManager.js"></script>
+		<script type="text/javascript" src="src/Main.js"></script>
+	</head>
+	<body>
+		<ul class="nav">
+			<li onclick="Controller.navClick(0)">
+				red
+			</li>
+			<li  onclick="Controller.navClick(1)">
+				blue
+			</li>
+			<li onclick="Controller.navClick(2)">
+				green
+			</li>
+			<li class="clearBoth"></li>
+		</ul>
+		<div id="container">
+			<div id="view-0"></div>
+			<div id="view-1"></div>
+			<div id="view-2" class="last"></div>
+			<div class="clearBoth"></div>
+		</div>
+	</body>
+
