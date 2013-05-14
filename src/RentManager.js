@@ -3,6 +3,7 @@ var RentManager=
 	init:function()
 	{
 		this.setDebug();
+		Controller.init();
 	},
 	setDebug:function()
 	{

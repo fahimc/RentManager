@@ -11,11 +11,13 @@
 		<script type="text/javascript" src="lib/com/fahimchowdhury/toolkit/toolkitMax-v1014-compressed.js"></script>
 		<script type="text/javascript" src="src/controller/Controller.js"></script>
 		<script type="text/javascript" src="src/model/Model.js"></script>
+		<script type="text/javascript" src="src/view/view.js"></script>
+		<script type="text/javascript" src="src/view/PropertyView.js"></script>
 		<script type="text/javascript" src="src/RentManager.js"></script>
 		<script type="text/javascript" src="src/Main.js"></script>
 	</head>
 	<body>
-		<ul class="nav">
+		<ul id="nav">
 			<li onclick="Controller.navClick(0)">
 				red
 			</li>
@@ -27,11 +29,67 @@
 			</li>
 			<li class="clearBoth"></li>
 		</ul>
-		<div id="container">
-			<div id="view-0"></div>
-			<div id="view-1"></div>
-			<div id="view-2" class="last"></div>
-			<div class="clearBoth"></div>
+		<div id="view-0">
+			<div class="menubar">
+				<h1 class="menuTitle">Your Properties</h1>
+				<ul class="menuHolder">
+					<li>
+						<div id="addPropAddButton" class="greenbutton" onclick="PropertyView.addClicked()">
+							Add
+						</div>
+					</li>
+					<li>
+						<div id="addPropBackButton" class="blueButton" onclick="PropertyView.backClicked()">
+							Back
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="newProperty">
+
+				<p class="title">
+					Add A Property
+				</p>
+				<form id="newPropForm" action="lib/com/rentmanager/addproperty.php" method="post" target="dataFrame">
+				<p>
+					Name:
+				</p>
+				<input id="p_name" type="text">
+				<br>
+				<p>
+					Address:
+				</p>
+				<textarea id="p_address"></textarea>
+				<br>
+				<p>
+					Postcode:
+				</p>
+				<input id="p_post" type="text">
+				<p>
+					Rent PCM:
+				</p>
+				<input id="p_rent" type="text">
+				<p>
+					Mortgage PCM:
+				</p>
+				<input id="p_mort" type="text">
+				<p>
+					Other Costs (Total) PCM:
+				</p>
+				<input id="p_other" type="text">
+				<div id="addPropertyButton" class="greenbutton" onclick="PropertyView.addNewClicked()">
+					Add
+				</div>
+				</form>
+				<div class="clearBoth"></div>
+			</div>
+			<ul id="propertyHolder">
+
+			</ul>
 		</div>
+		<div id="view-1"></div>
+		<div id="view-2" class="last"></div>
+		<div class="clearBoth"></div>
+		<iframe id="dataFrame" name="dataFrame"></iframe>
 	</body>
 

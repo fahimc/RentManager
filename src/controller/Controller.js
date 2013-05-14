@@ -2,7 +2,7 @@ var Controller=
 {
 	init:function()
 	{
-		
+		this.showPropertyPage();
 	},
 	navClick:function(index)
 	{
@@ -13,5 +13,15 @@ var Controller=
 		//show the next view
 		document.getElementById("view-"+model.currentPageIndex).style.display="block";
 		window.scrollTo(1,1);
+		switch(index)
+		{
+			case 0:
+			this.showPropertyPage();
+			break;
+		}
+	},
+	showPropertyPage:function()
+	{
+		View.hideNav();
 	}
 };
