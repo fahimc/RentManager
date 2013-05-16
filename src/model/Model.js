@@ -2,6 +2,8 @@ var model = new Model(
 	{
 		currentPageIndex:0,
 		currentPropertyIndex:0,
+		currentPropertyTab:0,
+		currency:"£",
 		id:
 		{
 			nav:"nav",
@@ -9,6 +11,7 @@ var model = new Model(
 			addPropBackButton:"addPropBackButton",
 			addPropAddButton:"addPropAddButton",
 			backToPropertListButton:"backToPropertListButton",
+			propertyDetails:"pdTab-0",
 			propName:"propName",
 			propertyHolder:"propertyHolder"
 		}
