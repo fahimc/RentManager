@@ -18,6 +18,9 @@ var Controller=
 			case 0:
 			this.showPropertyPage();
 			break;
+			case 1:
+			DetailView.init();
+			break;
 		}
 	},
 	showPropertyPage:function()

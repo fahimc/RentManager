@@ -4,6 +4,7 @@ var RentManager=
 	{
 		this.setDebug();
 		Controller.init();
+		PropertyView.init();
 	},
 	setDebug:function()
 	{

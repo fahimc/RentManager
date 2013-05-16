@@ -1,19 +1,20 @@
 <?php
 include_once 'rentmanager.php';
-if(isset($_POST['email']))
+if(isset($_POST['p_email']))
 {
 	$data = new StdClass();
-	$data->email = stripslashes($_POST['email']);
-	$data->name = stripslashes($_POST['name']);
-	$data->address = stripslashes($_POST['address']);
-	$data->postcode = stripslashes($_POST['postcode']);
-	$data->rent = stripslashes($_POST['rent']);
-	$data->mortgage = stripslashes($_POST['mortgage']);
-	$data->other = stripslashes($_POST['other']);
+	$data->email = stripslashes($_POST['p_email']);
+	$data->name = stripslashes($_POST['p_name']);
+	$data->address = stripslashes($_POST['p_address']);
+	$data->postcode = stripslashes($_POST['p_post']);
+	$data->rent = stripslashes($_POST['p_rent']);
+	$data->mortgage = stripslashes($_POST['p_mort']);
+	$data->other = stripslashes($_POST['p_other']);
 	
 	$rentManager = new RentManager();
 	$rentManager->storeProperty($data);
-	echo "status=1";
+	$data = $rentManager->getProperties();
+	echo "<script> top.PropertyView.onPropertyStored(".$data.");</script>";
 }else{
 	echo "status=-1";
 }

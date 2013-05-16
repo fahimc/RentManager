@@ -60,5 +60,30 @@ class RentManager
 		}
 		return false;
 	}
+	public function getProperties()
+	{
+		$this->connection = new mysqli(DB::HOST,DB::USER,DB::PASS,DB::DATABASE);
+		if (mysqli_connect_errno($this->connection))
+			  {
+			  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+			  }
+			  /* Create table doesn't return a resultset */
+			  $qstr = "SELECT * FROM ".TABLE::PROPERTY;
+			  $result =$this->connection->query($qstr);
+			  $data= "[";
+			 if($result) 
+			 {
+			 	$index=0;
+			 	 while ($row = $result->fetch_row()) {
+			 	 	if($index>0)$data.=",";
+			 	 	$data.="{name:'".$row[2]."',address:'".$row[3]."',postcode:'".$row[4]."'".",rent:'".$row[5]."'".",mortgage:'".$row[6]."'".",other:'".$row[7]."'}";
+			 	 	$index++;
+			 	 	}
+				 
+			 }
+			  $data.= "]";
+			 	 	return $data;
+	
+	}
 }
 ?>
