@@ -3,6 +3,8 @@ var model = new Model(
 		currentPageIndex:0,
 		currentPropertyIndex:0,
 		currentPropertyTab:0,
+		currentTenantTab:0,
+		currentTenantIndex:0,
 		currency:"£",
 		id:
 		{
@@ -13,6 +15,11 @@ var model = new Model(
 			backToPropertListButton:"backToPropertListButton",
 			propertyDetails:"pdTab-0",
 			propName:"propName",
+			tenantName:"tenantName",
+			newTenant:"newTenant",
+			tenantHolder:"tenantHolder",
+			addTenantButton:"addTenantButton",
+			closeAddTenantButton:"closeAddTenantButton",
 			propertyHolder:"propertyHolder"
 		}
 	}

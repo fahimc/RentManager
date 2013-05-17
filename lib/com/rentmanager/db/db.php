@@ -10,6 +10,7 @@ class Table
 {
 	const USER = "user";
 	const PROPERTY = "property";
+	const TENANT = "tenant";
 }
 class FIELD
 {
@@ -23,5 +24,13 @@ class FIELD
 	const PROPERTY_RENT = "rent";
 	const PROPERTY_MORTGAGE = "mortgage";
 	const PROPERTY_OTHER = "other";
+	const TENANT_EMAIL = "user_email";
+	const TENANT_FIRSTNAME = "firstname";
+	const TENANT_LASTNAME = "lastname";
+	const TENANT_JOINDATE = "joindate";
+	const TENANT_RENTDATE = "rentdate";
+	const TENANT_RENT = "rent";
+	const TENANT_OTHER = "other";
+	const TENANT_PROPERTYID = "property_id";
 }
 ?>
