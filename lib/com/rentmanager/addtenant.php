@@ -13,6 +13,7 @@ if(isset($_POST['t_email']))
 	$data->rent = stripslashes($_POST['t_rent']);
 	$data->other = stripslashes($_POST['t_other']);
 	$data->id = stripslashes($_POST['t_pid']);
+	$data->duration = stripslashes($_POST['t_duration']);
 	
 	$rentManager = new RentManager();
 	$rentManager->storeTenant($data);

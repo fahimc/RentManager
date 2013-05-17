@@ -218,7 +218,10 @@ if(!isset($_SESSION['identity']))
 							Rent PCM:
 						</p>
 						<input id="t_rent" name="t_rent" type="text" onfocus="DetailView.fieldFocus(this)">
-
+						<p>
+							Contract Length (Months):
+						</p>
+						<input id="t_duration" name="t_duration" type="text" maxlength="2" onfocus="DetailView.fieldFocus(this)">
 						<p>
 							Other Costs (Total) PCM:
 						</p>
@@ -252,12 +255,12 @@ if(!isset($_SESSION['identity']))
 				</ul>
 			</div>
 			<ul class="menuNav">
-				<li id="pdNav_0" class="selected" onclick="TenantView.changeTab(0)">
+				<li id="tdNav_0" class="selected" onclick="TenantView.changeTab(0)">
 					<p>
 						Info
 					</p>
 				</li>
-				<li id="pdNav_1" class="last"  onclick="TenantView.changeTab(1)">
+				<li id="tdNav_1" class="last"  onclick="TenantView.changeTab(1)">
 					<p>
 						RENT PAID
 					</p>
@@ -285,12 +288,74 @@ if(!isset($_SESSION['identity']))
 				<p id="td_rent"></p>
 				<hr>
 				<p class="title">
+					Contract Length
+				</p>
+				<p><span id="td_duration"></span> months</p>
+				<hr>
+				<p class="title">
 					Other:
 				</p>
 				<p id="td_other"></p>
 				<hr>
 				</div>
-				<div id="tdTab-1"></div>
+				<div id="tdTab-1">
+					<div class="menubar">
+					<h1 class="menuTitle"></h1>
+					<ul class="menuHolder">
+						<li>
+							<div id="addRentButton"  class="greenbutton" onclick="TenantView.addRentClicked()">
+								Add
+							</div>
+						</li>
+						<li>
+							<div id="closeAddRentButton" class="blueButton" onclick="TenantView.closeRentClicked()">
+								Close
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="newRent">
+					<p class="title">
+						Add Paid Rent
+					</p>
+					<form id="newRentForm" action="lib/com/rentmanager/addrent.php" method="POST" target="dataFrame">
+						<p>
+							Description:
+						</p>
+						<input id="r_desc" name="r_desc" type="text" onfocus="TenantView.fieldFocus(this)">
+						<br>
+						<p>
+							Total Paid(£)
+						</p>
+						<input id="r_total" name="r_total" type="text" onfocus="TenantView.fieldFocus(this)">
+						<br>
+						<p>
+							Date Paid:
+						</p>
+						<div class="date">
+							<input class="day" id="r_paiddate_day" name="r_paiddate_day" type="text" maxlength="2" onfocus="TenantView.fieldFocus(this)">
+							<p class="divider">/</p>
+							<input class="month" id="r_paiddate_month" name="r_paiddate_month" type="text" maxlength="2" onfocus="TenantView.fieldFocus(this)">
+							<p class="divider">/</p>
+							<input class="year" id="r_paiddate_year" name="r_paiddate_year" type="text" maxlength="4" onfocus="TenantView.fieldFocus(this)">
+							<div class="clearBoth"></div>
+						</div>
+						<br>
+						<div id="addNewRentButton" class="greenbutton" onclick="TenantView.addNewClicked()">
+							Add
+						</div>
+						<p id="r_error" >
+							Please fill in all fields
+						</p>
+						<input type="hidden" name="r_email" id="r_email" />
+						<input type="hidden" name="r_tenantid" id="r_tenantid" />
+					</form>
+					<div class="clearBoth"></div>
+				</div>
+				<ul id="rentHolder">
+
+				</ul>
+				</div>
 		</div>
 		<div class="clearBoth"></div>
 		<iframe id="dataFrame" name="dataFrame"></iframe>

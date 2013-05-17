@@ -8,6 +8,9 @@ var RentManager=
 	},
 	setDebug:function()
 	{
-		if(window.DEBUG && window.console)console.log(this);
+		if(window.DEBUG && window.console){
+			console.log(this);
+			console.log(propertyData);
+		}
 	}
 };

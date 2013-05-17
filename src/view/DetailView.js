@@ -80,6 +80,7 @@ var DetailView=
 		f.jyr = document.getElementById('t_joindate_year');
 		f.rday = document.getElementById('t_rentdate_day');
 		f.rent = document.getElementById('t_rent');
+		f.duration = document.getElementById('t_duration');
 
 		var empty = false;
 		for (var field in f) {

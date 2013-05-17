@@ -11,6 +11,7 @@ class Table
 	const USER = "user";
 	const PROPERTY = "property";
 	const TENANT = "tenant";
+	const RENT = "rent";
 }
 class FIELD
 {
@@ -32,5 +33,11 @@ class FIELD
 	const TENANT_RENT = "rent";
 	const TENANT_OTHER = "other";
 	const TENANT_PROPERTYID = "property_id";
+	const TENANT_DURATION = "duration";
+	const RENT_USEREMAIL = "user_email";
+	const RENT_DESC = "description";
+	const RENT_TOTAL = "total";
+	const RENT_PAIDDATE = "paiddate";
+	const RENT_TENANTID = "tenant_id";
 }
 ?>

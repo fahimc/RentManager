@@ -283,7 +283,7 @@ input:focus {
 {
 	cursor: pointer;
 }
-#pdTab-1,#pdTab-2,#newTenant,#closeAddTenantButton
+#pdTab-1,#pdTab-2,#newTenant,#closeAddTenantButton,#newRent,#tdTab-1
 {
 	display: none;
 }

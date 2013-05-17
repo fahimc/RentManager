@@ -20,6 +20,10 @@ var model = new Model(
 			tenantHolder:"tenantHolder",
 			addTenantButton:"addTenantButton",
 			closeAddTenantButton:"closeAddTenantButton",
+			addRentButton:"addRentButton",
+			closeAddRentButton:"closeAddRentButton",
+			rentHolder:"rentHolder",
+			newRent:"newRent",
 			propertyHolder:"propertyHolder"
 		}
 	}
