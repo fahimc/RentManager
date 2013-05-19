@@ -7,7 +7,7 @@ var PropertyView = {
 		holder.innerHTML = "";
 		for (var a = 0; a < propertyData.length; a++) {
 			var li = document.createElement("LI");
-			li.innerHTML = "<p>" + propertyData[a].name + "</p><div class='greenbutton' onclick='PropertyView.viewProperty(" + a + ")'>View</div";
+			li.innerHTML = "<p>" + propertyData[a].name + "</p><div class='greenbutton' onclick='PropertyView.viewProperty(" + a + ")'>View</div><div class='clearBoth'></div>";
 			li.setAttribute("index", a);
 			holder.appendChild(li);
 		}

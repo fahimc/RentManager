@@ -2,8 +2,8 @@
 require_once 'lib/com/google/account/const.php';
 require_once 'lib/com/rentmanager/rentmanager.php';
 session_start();
-if(!isset($_SESSION['identity']))
-	header('Location:'.$LOGIN_URL);
+if (!isset($_SESSION['identity']))
+	header('Location:' . $LOGIN_URL);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
@@ -24,8 +24,8 @@ if(!isset($_SESSION['identity']))
 		<script type="text/javascript" src="src/view/TenantView.js"></script>
 		<script type="text/javascript" src="src/RentManager.js"></script>
 		<script type="text/javascript" src="src/Main.js"></script>
-		<script type="text/javascript">var userEmail =   "<?php echo $_SESSION['identity']; ?>";<?php $rentManager=new RentManager();
-			$data=$rentManager->getProperties();
+		<script type="text/javascript">var userEmail =    "<?php echo $_SESSION['identity']; ?>";<?php $rentManager = new RentManager();
+			$data = $rentManager -> getProperties();
 		?>var propertyData =<?php echo $data; ?>
 	;
 		</script>
@@ -197,9 +197,13 @@ if(!isset($_SESSION['identity']))
 						</p>
 						<div class="date">
 							<input class="day" id="t_joindate_day" name="t_joindate_day" type="text" maxlength="2" onfocus="DetailView.fieldFocus(this)">
-							<p class="divider">/</p>
+							<p class="divider">
+								/
+							</p>
 							<input class="month" id="t_joindate_month" name="t_joindate_month" type="text" maxlength="2" onfocus="DetailView.fieldFocus(this)">
-							<p class="divider">/</p>
+							<p class="divider">
+								/
+							</p>
 							<input class="year" id="t_joindate_year" name="t_joindate_year" type="text" maxlength="4" onfocus="DetailView.fieldFocus(this)">
 							<div class="clearBoth"></div>
 						</div>
@@ -241,7 +245,39 @@ if(!isset($_SESSION['identity']))
 
 				</ul>
 			</div>
-			<div id="pdTab-2"></div>
+			<div id="pdTab-2">
+				<div>
+					<ul>
+						<li>
+							<p>Total Mortgage Paid</p>
+						</li>
+						<li>
+							<p id="overviewMort"></p>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<p>Total Rent Paid</p>
+						</li>
+						<li>
+							<p id="overviewRent"></p>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<p>Current Profit</p>
+						</li>
+						<li>
+							<p id="overviewProfit"></p>
+						</li>
+					</ul>
+					
+				</div>
+				<div id="overview_payments">
+					
+				</div>
+
+			</div>
 		</div>
 		<div id="view-2" class="last">
 			<div class="menubar">
@@ -290,16 +326,18 @@ if(!isset($_SESSION['identity']))
 				<p class="title">
 					Contract Length
 				</p>
-				<p><span id="td_duration"></span> months</p>
+				<p>
+					<span id="td_duration"></span> months
+				</p>
 				<hr>
 				<p class="title">
 					Other:
 				</p>
 				<p id="td_other"></p>
 				<hr>
-				</div>
-				<div id="tdTab-1">
-					<div class="menubar">
+			</div>
+			<div id="tdTab-1">
+				<div class="menubar">
 					<h1 class="menuTitle"></h1>
 					<ul class="menuHolder">
 						<li>
@@ -334,9 +372,13 @@ if(!isset($_SESSION['identity']))
 						</p>
 						<div class="date">
 							<input class="day" id="r_paiddate_day" name="r_paiddate_day" type="text" maxlength="2" onfocus="TenantView.fieldFocus(this)">
-							<p class="divider">/</p>
+							<p class="divider">
+								/
+							</p>
 							<input class="month" id="r_paiddate_month" name="r_paiddate_month" type="text" maxlength="2" onfocus="TenantView.fieldFocus(this)">
-							<p class="divider">/</p>
+							<p class="divider">
+								/
+							</p>
 							<input class="year" id="r_paiddate_year" name="r_paiddate_year" type="text" maxlength="4" onfocus="TenantView.fieldFocus(this)">
 							<div class="clearBoth"></div>
 						</div>
@@ -355,7 +397,7 @@ if(!isset($_SESSION['identity']))
 				<ul id="rentHolder">
 
 				</ul>
-				</div>
+			</div>
 		</div>
 		<div class="clearBoth"></div>
 		<iframe id="dataFrame" name="dataFrame"></iframe>

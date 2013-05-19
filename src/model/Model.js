@@ -6,6 +6,8 @@ var model = new Model(
 		currentTenantTab:0,
 		currentTenantIndex:0,
 		currency:"£",
+		months:["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+		overviewMonths:[],
 		id:
 		{
 			nav:"nav",
@@ -24,7 +26,12 @@ var model = new Model(
 			closeAddRentButton:"closeAddRentButton",
 			rentHolder:"rentHolder",
 			newRent:"newRent",
+			overview_payments:"overview_payments",
+			overviewMort:"overviewMort",
+			overviewRent:"overviewRent",
+			overviewProfit:"overviewProfit",
 			propertyHolder:"propertyHolder"
-		}
+		},
+		overviewPaymentStr:'<div class="monthHolder"> <h1>[m]</h1> <ul> <li> Rent </li> <li class="right"> [r] </li> <li class="clearBoth"></li> </ul> <ul> <li> Rent Paid </li> <li class="right"> [rp] </li> <li class="clearBoth"></li> </ul> <ul> <li> Outstanding </li> <li class="right"> [o] </li> <li class="clearBoth"></li> </ul> </div>'
 	}
 );
